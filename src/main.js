@@ -57,7 +57,7 @@ function drawShapes(scene, shapes) {
 function trackControls(scene) {
 	const leftHandElement = document.createElement('a-entity');
 	leftHandElement.setAttribute('oculus-touch-controls', 'hand: left');
-	leftHandElement.setAttribute('controller-cursor');
+	leftHandElement.setAttribute('controller-cursor', '');
 
 	const rightHandElement = document.createElement('a-entity');
 	rightHandElement.setAttribute('oculus-touch-controls', 'hand: right');
