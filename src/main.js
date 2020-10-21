@@ -60,7 +60,7 @@ function trackControls(scene) {
 
 	const rightHandElement = document.createElement('a-entity');
 	rightHandElement.setAttribute('hand-controls', 'hand: right');
-	rightHandElement.setAttribute('controller-cursor');
+	rightHandElement.setAttribute('controller-cursor', '');
 
 	scene.appendChild(leftHandElement);
 	scene.appendChild(rightHandElement);
