@@ -72,12 +72,26 @@ const assets = [
 	{ name: 'skyTexture', src: 'https://cdn.aframe.io/a-painter/images/sky.jpg' }
 ]
 
-const shapes = [
-	{ type: 'box', position: { x: -1, y: 0.6, z: -3 }, rotation: { x: 0, y: 45, z: 0 }, color: '#4CC3D9' },
-	{ type: 'sphere', position: { x: 0, y: 1.35, z: -5 }, radius: 1.25, color: '#EF2D5E' },
-	{ type: 'cylinder', position: { x: 1, y: 0.85, z: -3 }, radius: 0.5, height: 1.5, color: '#FFC65D' },
-	{ type: 'plane', position: { x: 0, y: 0.1, z: -4 }, rotation: { x: -90, y: 0, z: 0 }, width: 4, height: 4, color: '#7BC8A4' }
-];
+// const shapes = [
+// 	{ type: 'box', position: { x: -1, y: 0.6, z: -3 }, rotation: { x: 0, y: 45, z: 0 }, color: '#4CC3D9' },
+// 	{ type: 'sphere', position: { x: 0, y: 1.35, z: -5 }, radius: 1.25, color: '#EF2D5E' },
+// 	{ type: 'cylinder', position: { x: 1, y: 0.85, z: -3 }, radius: 0.5, height: 1.5, color: '#FFC65D' },
+// 	{ type: 'plane', position: { x: 0, y: 0.1, z: -4 }, rotation: { x: -90, y: 0, z: 0 }, width: 4, height: 4, color: '#7BC8A4' }
+// ];
+
+const shapes = [];
+const width = 10;
+const height = 5;
+for (let x=-width/2; x<width/2; x++) {
+	for (let y=0; y<height; y++) {
+		shapes.push({
+			type: 'sphere',
+			position: { x, y, z: -3 },
+			color: 'pink',
+			radius: 0.3
+		});
+	};
+}
 
 AFRAME.registerComponent('controller-event-handler', {
 	init: function () {
