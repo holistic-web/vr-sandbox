@@ -70,11 +70,9 @@ function trackControls(scene) {
 }
 
 function addKeyboard(scene) {
-	require('../node_modules/aframe-super-keyboard/dist/sk-basic.png');
-	require('../node_modules/aframe-super-keyboard/dist/sk-numpad.png');
 	const element = document.createElement('a-entity');
 	element.setAttribute('super-keyboard',
-		'hand: #rightHand; imagePath: ./node_modules/aframe-super-keyboard/dist'
+		'hand: #rightHand; imagePath: assets/aframe-super-keyboard/'
 	);
 	element.setAttribute('position', '0 1.076 -0.5');
 	element.setAttribute('rotation', '-30 0 0');
