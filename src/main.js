@@ -1,4 +1,5 @@
-require('aframe');
+const AFRAME = require('aframe');
+require('aframe-extras');
 
 function coordToString(coord) {
 	return `${coord.x || 0} ${coord.y || 0} ${coord.z || 0}`;
@@ -74,6 +75,18 @@ const shapes = [
 	{ type: 'cylinder', position: { x: 1, y: 0.85, z: -3 }, radius: 0.5, height: 1.5, color: '#FFC65D' },
 	{ type: 'plane', position: { x: 0, y: 0.1, z: -4 }, rotation: { x: -90, y: 0, z: 0 }, width: 4, height: 4, color: '#7BC8A4' }
 ];
+
+AFRAME.registerComponent('controller-event-handler', {
+	init: function () {
+		var el = this.el;
+		el.addEventListener('mouseenter', () => {
+			el.setAttribute('material', 'color', '#24CAFF');
+		});
+		el.addEventListener('mouseleave', () => {
+			el.setAttribute('material', 'color', '#EF2D5E');
+		});
+	}
+});
 
 const scene = createScene();
 defineAssets(scene, assets);
