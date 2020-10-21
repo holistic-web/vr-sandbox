@@ -56,9 +56,11 @@ function drawShapes(scene, shapes) {
 function trackControls(scene) {
 	const leftHandElement = document.createElement('a-entity');
 	leftHandElement.setAttribute('hand-controls', 'hand: left');
+	leftHandElement.setAttribute('controller-cursor');
 
 	const rightHandElement = document.createElement('a-entity');
 	rightHandElement.setAttribute('hand-controls', 'hand: right');
+	rightHandElement.setAttribute('controller-cursor');
 
 	scene.appendChild(leftHandElement);
 	scene.appendChild(rightHandElement);
