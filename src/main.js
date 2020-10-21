@@ -49,6 +49,7 @@ function drawShapes(scene, shapes) {
 		if (shape.width) element.setAttribute('width', shape.width);
 		if (shape.height) element.setAttribute('height', shape.height);
 		if (shape.color) element.setAttribute('color', shape.color);
+		element.setAttribute('controller-event-handler', '');
 		scene.appendChild(element);
 	});
 }
