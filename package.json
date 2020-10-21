@@ -14,6 +14,6 @@
 	},
 	"dependencies": {
 		"aframe": "^1.0.4",
-		"aframe-extras": "^6.1.1"
+		"aframe-controller-cursor-component": "^0.2.7"
 	}
 }

@@ -1,5 +1,5 @@
 const AFRAME = require('aframe');
-require('aframe-extras');
+require('aframe-controller-cursor-component');
 
 function coordToString(coord) {
 	return `${coord.x || 0} ${coord.y || 0} ${coord.z || 0}`;
