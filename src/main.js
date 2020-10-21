@@ -1,5 +1,6 @@
 const AFRAME = require('aframe');
 require('aframe-controller-cursor-component');
+require('aframe-super-keyboard');
 
 function coordToString(coord) {
 	return `${coord.x || 0} ${coord.y || 0} ${coord.z || 0}`;
@@ -62,9 +63,23 @@ function trackControls(scene) {
 	const rightHandElement = document.createElement('a-entity');
 	rightHandElement.setAttribute('oculus-touch-controls', 'hand: right');
 	rightHandElement.setAttribute('controller-cursor', '');
+	rightHandElement.setAttribute('id', 'rightHand')
 
 	scene.appendChild(leftHandElement);
 	scene.appendChild(rightHandElement);
+}
+
+function addKeyboard(scene) {
+	require('../node_modules/aframe-super-keyboard/dist/sk-basic.png');
+	require('../node_modules/aframe-super-keyboard/dist/sk-numpad.png');
+	const element = document.createElement('a-entity');
+	element.setAttribute('super-keyboard',
+		'hand: #rightHand; imagePath: ./node_modules/aframe-super-keyboard/dist'
+	);
+	element.setAttribute('position', '0 1.076 -0.5');
+	element.setAttribute('rotation', '-30 0 0');
+	scene.appendChild(element);
+	return element;
 }
 
 const assets = [
@@ -80,8 +95,8 @@ const assets = [
 // ];
 
 const shapes = [];
-const width = 100;
-const height = 50;
+const width = 10;
+const height = 5;
 for (let x=-width/2; x<width/2; x++) {
 	for (let y=1; y<height+1; y++) {
 		shapes.push({
@@ -110,3 +125,4 @@ defineAssets(scene, assets);
 drawBackground(scene);
 drawShapes(scene, shapes);
 trackControls(scene);
+addKeyboard(scene);
