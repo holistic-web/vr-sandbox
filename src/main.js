@@ -80,10 +80,10 @@ const assets = [
 // ];
 
 const shapes = [];
-const width = 10;
-const height = 5;
+const width = 100;
+const height = 50;
 for (let x=-width/2; x<width/2; x++) {
-	for (let y=0; y<height; y++) {
+	for (let y=1; y<height+1; y++) {
 		shapes.push({
 			type: 'sphere',
 			position: { x, y, z: -3 },
